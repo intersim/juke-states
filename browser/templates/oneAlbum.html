@@ -1,6 +1,6 @@
         <div class="album">
           <p>
-            <h3>{{ album.name }}</h3>
+            <h3>{{ album.name }} <a href="mailto:?subject={{ album.name }}&body=Hey, I found this groovy album, thought you might like it... www.juke.com/albums/{{ album._id }}" title="email to a friend"><span class="glyphicon glyphicon-send"></span></a></h3>
             <img ng-src="{{ album.imageUrl }}" class="img-thumbnail">
           </p>
           <table class='table'>
