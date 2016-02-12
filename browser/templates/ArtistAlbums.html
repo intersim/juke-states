@@ -1,5 +1,5 @@
 <div class="col-xs-4" ng-repeat="album in artist.albums">
-        <a class="thumbnail" href="#" ng-click="viewOneAlbum(album)">
+        <a class="thumbnail" ui-sref='oneAlbum({id:album._id})'>
           <img ng-src="{{ album.imageUrl }}">
           <div class="caption">
             <h5>
