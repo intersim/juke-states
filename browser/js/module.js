@@ -23,6 +23,11 @@ juke.config(function ($stateProvider) {
   $stateProvider.state('allArtists', {
     url: '/artists',
     templateUrl: '/templates/allArtists.html',
+    resolve: {
+      artists: function(ArtistFactory) {
+        return ArtistFactory.fetchAll()
+      }
+    },
     controller: 'ArtistsCtrl'
   });
 });
@@ -32,5 +37,11 @@ juke.config(function ($stateProvider) {
     url: '/artists/:id',
     templateUrl: '/templates/oneArtist.html',
     controller: 'ArtistCtrl'
-  });
+  }).state('oneArtist.Albums', {
+    url: '/albums',
+    templateUrl: '/templates/ArtistAlbums.html',
+  }).state('oneArtist.Songs',{
+    url: '/songs',
+    templateUrl: '/templates/ArtistSongs.html'
+  })
 });
